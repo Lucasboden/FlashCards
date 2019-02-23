@@ -2,37 +2,9 @@ import { AsyncStorage } from "react-native";
 
 export const FLASHCARD_STORAGE_KEY = "Udacity:FlashCards";
 
-let decks={
-	Redbull: {
-		title: 'RedBull',
-		questions: 
-		[
-			{
-				question: 'What is RedBull?',
-				answer: 'An energy drink.'
-			},
-			{
-				question: 'Does it give you wings?',
-				answer: 'Yes'
-			}
-		]
-	},
-	Lays :{
-		title: 'Lays',
-		questions:
-		[	
-			{
-				question:'Is there a Sour Cream flavor?',
-				answer:'Yes, it is delicious'
-			}
-		]
-	}
-}
-
-
 export const fetchDecks = () => {
   return AsyncStorage.getItem(FLASHCARD_STORAGE_KEY).then(results => {
-    const data = JSON.parse(results);
+  	const data = JSON.parse(results);
     return data;
   });
 };

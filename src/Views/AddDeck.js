@@ -17,7 +17,7 @@ class AddDeck extends Component {
     input: ""
   };
 
-  _createDeckObject = () => ({
+  _newDeckObject = () => ({
     id: generateId(),
     name: this.state.input,
     cards: []
@@ -30,8 +30,8 @@ class AddDeck extends Component {
   };
 
   handleSubmit = () => {
-    deck = this._createDeckObject();
-    this.props.createDeck(deck.id, deck.name); // Add to redux
+    deck = this._newDeckObject();
+    this.props.newDeck(deck.id, deck.name); // Add to redux
     saveDeck(deck); // Persist to AsyncStorage
 
     // Route to new deck's detail view.
